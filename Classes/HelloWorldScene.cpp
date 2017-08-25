@@ -98,24 +98,24 @@ bool HelloWorld::init()
         return false;
     }
     
-    auto rootNode = CSLoader::createNode("MainScene1.csb");
+    auto rootNode = CSLoader::createNode("MainScene.csb");
 
     addChild(rootNode);
 	auto start = static_cast<ui::Button*>(rootNode->getChildByName("Button_start"));
-	start->addClickEventListener(CC_CALLBACK_1(HelloWorld::menuCloseCallback, this));
+	start->addClickEventListener(CC_CALLBACK_1(HelloWorld::menuTransfer, this));
 	auto set = static_cast<ui::Button*>(rootNode->getChildByName("Button_set"));
-	set->addCCSEventListener(CC_CALLBACK_1(HelloWorld::menuCloseCallback, this));
+	set->addClickEventListener(CC_CALLBACK_1(HelloWorld::menuTransfer, this));
 	auto help = static_cast<ui::Button*>(rootNode->getChildByName("Button_help"));
-	help->addClickEventListener(CC_CALLBACK_1(HelloWorld::menuCloseCallback, this));
+	help->addClickEventListener(CC_CALLBACK_1(HelloWorld::menuTransfer, this));
 	auto about = static_cast<ui::Button*>(rootNode->getChildByName("Button_about"));
-	about->addClickEventListener(CC_CALLBACK_1(HelloWorld::menuCloseCallback, this));
+	about->addClickEventListener(CC_CALLBACK_1(HelloWorld::menuTransfer, this));
 	start->setTag(10);
 	set->setTag(11);
 	help->setTag(12);
 	about->setTag(13);
 	return true;
 }
-void HelloWorld::menuCloseCallback(Ref *ptr)
+void HelloWorld::menuTransfer(Ref *ptr)
 {
 	MenuItem * nowItem = (MenuItem *)ptr;
 	SimpleAudioEngine ::getInstance()->playEffect("");

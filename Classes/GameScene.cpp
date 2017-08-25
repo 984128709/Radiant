@@ -16,13 +16,15 @@ bool GameScene::init() {
 
 	addChild(rootNode);
 
-	auto BossFight = static_cast<ui::Button*>(rootNode->getChildByName("Button_boss1"));
+	/**auto BossFight = static_cast<ui::Button*>(rootNode->getChildByName("Button_boss1"));
 	BossFight->addClickEventListener(CC_CALLBACK_1(GameScene::menuCloseCallback, this));
 	auto ClassicFight = static_cast<ui::Button*>(rootNode->getChildByName("Button_game1"));
     ClassicFight->addClickEventListener(CC_CALLBACK_1(GameScene::menuCloseCallback, this));
 
 	BossFight->setTag(10);
 	ClassicFight->setTag(11);
+	**/
+	return  true;
 }
 
 Scene *  GameScene::createScene() {
@@ -32,7 +34,7 @@ Scene *  GameScene::createScene() {
 	return scene;
 }
 
-void GameScene::menuCloseCallback(Ref *ptr)
+/**void GameScene::menuCloseCallback(Ref *ptr)
 {
 	MenuItem * nowItem = (MenuItem *)ptr;
 	SimpleAudioEngine::getInstance()->playEffect("");
@@ -45,4 +47,4 @@ void GameScene::menuCloseCallback(Ref *ptr)
 		//Director::getInstance()->replaceScene(GameScene2::createScene());
 		break;
 	}
-}
+}**/

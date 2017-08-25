@@ -12,7 +12,7 @@ public:
 	bool init();
 	CREATE_FUNC(GameScene);
 	static Scene * createScene();
-	void menuCloseCallback(Ref *ptr);
+	//void menuCloseCallback(Ref *ptr);
 public:
 	int score;
 };
